@@ -1,0 +1,250 @@
+.nav {
+	padding-top: 35px;
+}
+
+.nav__logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+
+	& span {
+		font-family: "Righteous";
+		margin-left: 5px;
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+}
+
+.header {
+	min-height: 100vh;
+	position: relative;
+}
+
+.form {
+	text-align: center;
+}
+
+.form__inner {
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 255px;
+	height: max-content;
+	max-width: 512px;
+}
+
+.form__title {
+	font-size: 36px;
+}
+
+.form__text {
+	font-size: 20px;
+	color: #695479;
+	margin: 30px 0;
+}
+
+.form__buttons {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 120px;
+		height: 76px;
+		background: url('../../public/logo.svg') no-repeat center top / cover;
+		filter: blur(9px);
+		left: 35px;
+		top: 15px;
+	}
+}
+
+.form__button {
+	position: relative;
+	z-index: 1;
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+	font-size: 14px;
+	backdrop-filter: blur(30px);
+	border: 2px solid #280a3f;
+	transition: background-color 0.2s ease, color 0.2s ease;
+
+	& > span {
+		color: #280a3f;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& span {
+			width: 123px;
+			width: max-content;
+		}
+
+		&::before {
+			content: '';
+			background: url('../../public/download.svg') no-repeat center top / cover;
+			width: 24px;
+			height: 24px;
+			margin-right: 10px;
+			display: block;
+		}
+	}
+
+	&:hover {
+		background-color: #280a3f;
+
+		& > span {
+			color: #fff;
+		}
+	}
+}
+
+.form__upload {
+	position: relative;
+	z-index: 1;
+	border: 2px dashed #280a3f;
+	margin-bottom: 15px;
+
+	&:hover > span::before {
+		background-image: url('../../public/download-hover.svg');
+	}
+}
+
+.form__file {
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	position: absolute;
+	opacity: 0;
+}
+
+.form__voice {
+	& > span::before {
+		background-image: url('../../public/voice.svg');
+	}
+
+	&:hover > span::before {
+		background-image: url('../../public/voice-hover.svg');
+	}
+}
+
+.form__text {
+	font-size: 14px;
+	color: rgba(40, 10, 63, 0.7);
+}
+
+.header__ellipse {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	filter: blur(100px);
+}
+
+.header__ellipse_first {
+	background-image: linear-gradient(95deg, #fc902c 16%, #ffb930 94%);
+	opacity: 0.3;
+	left: 0;
+	top: 0;
+}
+
+.header__ellipse_second {
+	background-image: linear-gradient(95deg, #fc2c45 16%, #ff30b9 106%);
+	opacity: 0.3;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+}
+
+.header__ellipse_third {
+	width: 150px;
+	height: 150px;
+	background-image: linear-gradient(95deg, #2c41fc 16%, #9a1bff 72%);
+	opacity: 0.3;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	filter: blur(70px);
+}
+
+.form__uploadRect {
+	width: calc(100% - 40px);
+	height: calc(100% - 40px);
+	background-color: rgba(#fff, 0.8);
+	backdrop-filter: blur(70px);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-width: 3px;
+	border-radius: 10px;
+	font-size: 14px;
+	font-weight: 700;
+	font-family: "Montserrat";
+	opacity: 0;
+	transform: scale(0.9);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+
+	& > span {
+		color: #280a3f;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& span {
+			width: 123px;
+		}
+
+		&::before {
+			content: '';
+			background: url('../../public/download.svg') no-repeat center top / cover;
+			width: 24px;
+			height: 24px;
+			margin-right: 10px;
+			display: block;
+		}
+	}
+
+	&:hover span::before {
+		background-image: url('../../public/download.svg');
+	}
+}
+
+.form__uploadRect_active {
+	z-index: 2;
+	opacity: 1;
+	transform: scale(1);
+}
+
+.form__result {
+	font-size: 18px;
+	font-family: "Montserrat";
+	font-weight: 800;
+}
+
+.form__update {
+	margin-top: 20px;
+
+	& > span::before {
+		background-image: url('../../public/restart.svg');
+	}
+
+	&:hover > span::before {
+		background-image: url('../../public/restart-hover.svg');
+	}
+}
